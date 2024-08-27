@@ -1,0 +1,143 @@
+body {
+    background-color: #001f3f; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #f5f5dc; 
+    border-radius: 15px; 
+    padding: 20px;
+    width: 90%;
+    max-width: 500px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+
+input {
+    font-size: 2em;
+    letter-spacing: 5px;
+    text-align: center;
+    width: 90%; 
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #001f3f;
+    color: white;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #001f3f;
+}
+
+.attempts {
+    margin-top: 20px;
+}
+
+.attempt {
+    margin: 10px 0;
+}
+
+.attempt span {
+    margin: 0 5px;
+    font-size: 2em; 
+    font-weight: bold; 
+    display: inline-block;
+    width: 40px; 
+    height: 40px; 
+    line-height: 40px; 
+    text-align: center; 
+}
+
+.attempt span.green {
+    color: #2ecc71; 
+}
+
+.attempt span.yellow {
+    color: #f1c40f; 
+}
+
+.attempt span.gray {
+    color: #95a5a6; 
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.restart-button {
+    display: inline-block;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e74c3c; /* Rouge pour le bouton de relance */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 0px;
+}
+
+.restart-button:hover {
+    background-color: #c0392b; /* Rouge foncé pour le survol */
+}
+
+input {
+    font-size: 1em; /* Ajustez si nécessaire */
+}
+
+button {
+    font-size: 1em; /* Ajustez si nécessaire */
+}
+
+nav {
+    background-color: #001f3f; /* Même couleur que le fond pour intégrer la navbar */
+    padding: 30px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed; /* La navbar reste en haut même en scrollant */
+    top: 0; /* La position de la navbar est fixée en haut */
+    left: 0;
+    z-index: 1000; /* Assure que la navbar est au-dessus des autres éléments */
+    border-bottom: #f5f5dc solid 1px;
+}
+
+nav a {
+    font-size: 1.2em; /* Taille légèrement plus grande pour les liens */
+    text-decoration: none;
+    color: #f5f5dc;
+    margin: 0 15px; /* Espacement entre les liens */
+}
+
+nav button {
+    font-size: 1.2em; /* Taille légèrement plus grande pour le bouton */
+    margin-left: 10px;
+    background-color: #e74c3c; /* Rouge pour le bouton de déconnexion */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
