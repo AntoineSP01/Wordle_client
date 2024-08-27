@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useOutletContext, useNavigate } from "react-router-dom";
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
 
 function Login({ onLogin }) {
     const [email, setEmail] = useState("");
@@ -13,7 +15,7 @@ function Login({ onLogin }) {
         e.preventDefault();
 
         axios
-            .post("http://localhost:5000/api/login", { email, password })
+            .post(`${apiUrl}/api/login`, { email, password })
             .then((response) => {
                 localStorage.setItem("token", response.data.token);
                 setMessage("Login successful!");

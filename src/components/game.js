@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../App.css";
 
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
 function Game() {
     const [word, setWord] = useState(""); // Le mot à deviner
     const [guess, setGuess] = useState(""); // La tentative actuelle
@@ -17,7 +19,7 @@ function Game() {
 
     const fetchWord = () => {
         axios
-            .get("http://localhost:5000/api/word")
+            .get(`${apiUrl}/api/word`)
             .then((response) => setWord(response.data))
             .catch((error) => console.error("Error fetching word:", error));
     };
@@ -28,7 +30,7 @@ function Game() {
         if (guess.length !== 5) return; // Vérifier que la tentative fait bien 5 caractères
 
         axios
-            .post("http://localhost:5000/api/guess", { guess, word })
+            .post(`${apiUrl}/api/guess`, { guess, word })
             .then((response) => {
                 const feedback = response.data.feedback;
 

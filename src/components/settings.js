@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
 
 function Profile() {
     const [name, setName] = useState("");
@@ -15,7 +17,7 @@ function Profile() {
             navigate("/login"); // Rediriger vers la page de connexion si non authentifié
         } else {
             axios
-                .get("http://localhost:5000/api/profile", {
+                .get(`${apiUrl}/api/profile`, {
                     headers: { Authorization: `Bearer ${token}` },
                 })
                 .then((response) => {
@@ -32,7 +34,7 @@ function Profile() {
         const token = localStorage.getItem("token");
         axios
             .put(
-                "http://localhost:5000/api/profile",
+                `${apiUrl}/api/profile`,
                 { name: newName },
                 {
                     headers: { Authorization: `Bearer ${token}` },
