@@ -14,7 +14,7 @@ function Login({ onLogin }) {
 
         axios
             .post(
-                "https://wordleserver-antoinesp01-antoines-projects-bf7851c2.vercel.app/api/login",
+                "https://wordleserver-antoines-projects-bf7851c2.vercel.app/api/login",
                 { email, password }
             )
             .then((response) => {

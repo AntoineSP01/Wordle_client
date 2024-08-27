@@ -15,7 +15,7 @@ function Profile() {
             navigate("/login"); // Rediriger vers la page de connexion si non authentifié
         } else {
             axios
-                .get("https://wordleserver-antoinesp01-antoines-projects-bf7851c2.vercel.app/api/profile", {
+                .get("https://wordleserver-antoines-projects-bf7851c2.vercel.app/api/profile", {
                     headers: { Authorization: `Bearer ${token}` },
                 })
                 .then((response) => {
@@ -32,7 +32,7 @@ function Profile() {
         const token = localStorage.getItem("token");
         axios
             .put(
-                "https://wordleserver-antoinesp01-antoines-projects-bf7851c2.vercel.app/api/profile",
+                "https://wordleserver-antoines-projects-bf7851c2.vercel.app/api/profile",
                 { name: newName },
                 {
                     headers: { Authorization: `Bearer ${token}` },

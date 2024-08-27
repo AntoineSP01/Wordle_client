@@ -14,7 +14,7 @@ function Register() {
 
         axios
             .post(
-                "https://wordleserver-antoinesp01-antoines-projects-bf7851c2.vercel.app/api/register",
+                "https://wordleserver-antoines-projects-bf7851c2.vercel.app/api/register",
                 {
                     name,
                     email,
