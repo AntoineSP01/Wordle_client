@@ -17,7 +17,7 @@ function Game() {
 
     const fetchWord = () => {
         axios
-            .get("https://wordleserver-antoines-projects-bf7851c2.vercel.app/api/word")
+            .get("http://localhost:5000/api/word")
             .then((response) => setWord(response.data))
             .catch((error) => console.error("Error fetching word:", error));
     };
@@ -28,7 +28,7 @@ function Game() {
         if (guess.length !== 5) return; // Vérifier que la tentative fait bien 5 caractères
 
         axios
-            .post("https://wordleserver-antoines-projects-bf7851c2.vercel.app/api/guess", { guess, word })
+            .post("http://localhost:5000/api/guess", { guess, word })
             .then((response) => {
                 const feedback = response.data.feedback;
 

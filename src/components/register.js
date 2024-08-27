@@ -13,14 +13,11 @@ function Register() {
         e.preventDefault();
 
         axios
-            .post(
-                "https://wordleserver-antoines-projects-bf7851c2.vercel.app/api/register",
-                {
-                    name,
-                    email,
-                    password,
-                }
-            )
+            .post("http://localhost:5000/api/register", {
+                name,
+                email,
+                password,
+            })
             .then((response) => {
                 setMessage("Registration successful!");
                 const token = response.data.token; // Récupérer le token depuis la réponse

@@ -13,10 +13,7 @@ function Login({ onLogin }) {
         e.preventDefault();
 
         axios
-            .post(
-                "https://wordleserver-antoines-projects-bf7851c2.vercel.app/api/login",
-                { email, password }
-            )
+            .post("http://localhost:5000/api/login", { email, password })
             .then((response) => {
                 localStorage.setItem("token", response.data.token);
                 setMessage("Login successful!");
