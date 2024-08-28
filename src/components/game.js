@@ -22,6 +22,7 @@ function Game() {
             .get(`${apiUrl}/api/word`, {
                 headers: {
                     "Access-Control-Allow-Origin": process.env.REACT_URL,
+                    "Access-Control-Allow-Methods": "POST, GET, PUT",
                 },
             })
             .then((response) => setWord(response.data))
@@ -34,11 +35,14 @@ function Game() {
         if (guess.length !== 5) return; // Vérifier que la tentative fait bien 5 caractères
 
         axios
-            .post(`${apiUrl}/api/guess`, { guess, word },
+            .post(
+                `${apiUrl}/api/guess`,
+                { guess, word },
                 {
                     headers: {
                         "Access-Control-Allow-Origin": process.env.REACT_URL,
-                    }
+                        "Access-Control-Allow-Methods": "POST, GET, PUT",
+                    },
                 }
             )
             .then((response) => {

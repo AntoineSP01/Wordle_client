@@ -21,6 +21,7 @@ function Profile() {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         "Access-Control-Allow-Origin": process.env.REACT_URL,
+                        "Access-Control-Allow-Methods": "POST, GET, PUT",
                     },
                 })
                 .then((response) => {
@@ -43,6 +44,7 @@ function Profile() {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         "Access-Control-Allow-Origin": process.env.REACT_URL,
+                        "Access-Control-Allow-Methods": "POST, GET, PUT",
                     },
                 }
             )

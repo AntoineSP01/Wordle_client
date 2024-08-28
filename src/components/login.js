@@ -21,6 +21,7 @@ function Login({ onLogin }) {
                 {
                     headers: {
                         "Access-Control-Allow-Origin": process.env.REACT_URL,
+                        "Access-Control-Allow-Methods": "POST, GET, PUT",
                     },
                 }
             )
