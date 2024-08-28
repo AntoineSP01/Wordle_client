@@ -15,7 +15,15 @@ function Login({ onLogin }) {
         e.preventDefault();
 
         axios
-            .post(`${apiUrl}/api/login`, { email, password })
+            .post(
+                `${apiUrl}/api/login`,
+                { email, password },
+                {
+                    headers: {
+                        "Access-Control-Allow-Origin": process.env.REACT_URL,
+                    },
+                }
+            )
             .then((response) => {
                 localStorage.setItem("token", response.data.token);
                 setMessage("Login successful!");

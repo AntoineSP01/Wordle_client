@@ -18,7 +18,10 @@ function Profile() {
         } else {
             axios
                 .get(`${apiUrl}/api/profile`, {
-                    headers: { Authorization: `Bearer ${token}` },
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Access-Control-Allow-Origin": process.env.REACT_URL,
+                    },
                 })
                 .then((response) => {
                     setName(response.data.name);
@@ -37,7 +40,10 @@ function Profile() {
                 `${apiUrl}/api/profile`,
                 { name: newName },
                 {
-                    headers: { Authorization: `Bearer ${token}` },
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        "Access-Control-Allow-Origin": process.env.REACT_URL,
+                    },
                 }
             )
             .then(() => {

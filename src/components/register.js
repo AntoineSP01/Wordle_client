@@ -14,11 +14,19 @@ function Register() {
         e.preventDefault();
 
         axios
-            .post(`${apiUrl}/api/register`, {
-                name,
-                email,
-                password,
-            })
+            .post(
+                `${apiUrl}/api/register`,
+                {
+                    name,
+                    email,
+                    password,
+                },
+                {
+                    headers: {
+                        "Access-Control-Allow-Origin": process.env.REACT_URL,
+                    },
+                }
+            )
             .then((response) => {
                 setMessage("Registration successful!");
                 const token = response.data.token; // Récupérer le token depuis la réponse

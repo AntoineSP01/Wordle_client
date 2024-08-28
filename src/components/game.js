@@ -19,7 +19,11 @@ function Game() {
 
     const fetchWord = () => {
         axios
-            .get(`${apiUrl}/api/word`)
+            .get(`${apiUrl}/api/word`, {
+                headers: {
+                    "Access-Control-Allow-Origin": process.env.REACT_URL,
+                },
+            })
             .then((response) => setWord(response.data))
             .catch((error) => console.error("Error fetching word:", error));
     };
@@ -30,7 +34,13 @@ function Game() {
         if (guess.length !== 5) return; // Vérifier que la tentative fait bien 5 caractères
 
         axios
-            .post(`${apiUrl}/api/guess`, { guess, word })
+            .post(`${apiUrl}/api/guess`, { guess, word },
+                {
+                    headers: {
+                        "Access-Control-Allow-Origin": process.env.REACT_URL,
+                    }
+                }
+            )
             .then((response) => {
                 const feedback = response.data.feedback;
 
