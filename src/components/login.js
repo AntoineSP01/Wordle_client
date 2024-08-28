@@ -15,7 +15,7 @@ function Login({ onLogin }) {
         e.preventDefault();
 
         axios
-            .post(
+            .get(
                 `${apiUrl}/api/login`,
                 { email, password },
                 {
