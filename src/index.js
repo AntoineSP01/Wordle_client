@@ -12,7 +12,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />, // Utilisez App comme layout
+        element: <App />, 
         children: [
             {
                 path: "register",

@@ -8,7 +8,7 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    const navigate = useNavigate(); // Initialisation du hook useNavigate
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -30,16 +30,16 @@ function Register() {
             )
             .then((response) => {
                 setMessage("Registration successful!");
-                const token = response.data.token; // Récupérer le token depuis la réponse
-                localStorage.setItem("token", token); // Stocker le token réel
-                localStorage.setItem("username", name); // Stocker le nom de l'utilisateur
-                navigate("/game"); // Redirection vers la page du jeu
+                const token = response.data.token; 
+                localStorage.setItem("token", token); 
+                localStorage.setItem("username", name); 
+                navigate("/game"); 
                 window.location.reload();
             })
             .catch((error) => setMessage("Error registering user."));
 
 
-        // Réinitialiser les champs de saisie après soumission
+        
         setPassword("");
         setEmail("");
         setName("");

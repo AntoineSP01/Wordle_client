@@ -5,12 +5,12 @@ import "../App.css";
 const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
 function Game() {
-    const [word, setWord] = useState(""); // Le mot à deviner
-    const [guess, setGuess] = useState(""); // La tentative actuelle
-    const [attempts, setAttempts] = useState([]); // Tableau des tentatives
-    const [gameOver, setGameOver] = useState(false); // Pour gérer la fin de la partie
-    const [hasWon, setHasWon] = useState(false); // Pour gérer la victoire
-    const maxAttempts = 6; // Nombre maximum de tentatives
+    const [word, setWord] = useState(""); 
+    const [guess, setGuess] = useState(""); 
+    const [attempts, setAttempts] = useState([]); 
+    const [gameOver, setGameOver] = useState(false); 
+    const [hasWon, setHasWon] = useState(false); 
+    const maxAttempts = 6; 
     const username = localStorage.getItem("username"); 
 
     useEffect(() => {
@@ -32,7 +32,7 @@ function Game() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (guess.length !== 5) return; // Vérifier que la tentative fait bien 5 caractères
+        if (guess.length !== 5) return; 
 
         axios
             .post(
@@ -48,17 +48,17 @@ function Game() {
             .then((response) => {
                 const feedback = response.data.feedback;
 
-                // Ajouter la tentative et le feedback au tableau des tentatives
+                
                 setAttempts([...attempts, { guess, feedback }]);
 
                 if (guess === word) {
-                    setHasWon(true); // L'utilisateur a gagné
-                    setGameOver(true); // Terminer la partie
+                    setHasWon(true); 
+                    setGameOver(true); 
                 } else if (attempts.length + 1 === maxAttempts) {
-                    setGameOver(true); // Terminer la partie si les tentatives sont épuisées
+                    setGameOver(true); 
                 }
 
-                // Réinitialiser la tentative
+                
                 setGuess("");
             })
             .catch((error) => console.error("Error submitting guess:", error));

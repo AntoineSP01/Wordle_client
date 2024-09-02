@@ -91,7 +91,7 @@ h2 {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #e74c3c; /* Rouge pour le bouton de relance */
+    background-color: #e74c3c; 
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -99,42 +99,42 @@ h2 {
 }
 
 .restart-button:hover {
-    background-color: #c0392b; /* Rouge foncé pour le survol */
+    background-color: #c0392b; 
 }
 
 input {
-    font-size: 1em; /* Ajustez si nécessaire */
+    font-size: 1em; 
 }
 
 button {
-    font-size: 1em; /* Ajustez si nécessaire */
+    font-size: 1em; 
 }
 
 nav {
-    background-color: #001f3f; /* Même couleur que le fond pour intégrer la navbar */
+    background-color: #001f3f; 
     padding: 30px 20px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed; /* La navbar reste en haut même en scrollant */
-    top: 0; /* La position de la navbar est fixée en haut */
+    position: fixed; 
+    top: 0; 
     left: 0;
-    z-index: 1000; /* Assure que la navbar est au-dessus des autres éléments */
+    z-index: 1000; 
     border-bottom: #f5f5dc solid 1px;
 }
 
 nav a {
-    font-size: 1.2em; /* Taille légèrement plus grande pour les liens */
+    font-size: 1.2em; 
     text-decoration: none;
     color: #f5f5dc;
-    margin: 0 15px; /* Espacement entre les liens */
+    margin: 0 15px; 
 }
 
 nav button {
-    font-size: 1.2em; /* Taille légèrement plus grande pour le bouton */
+    font-size: 1.2em; 
     margin-left: 10px;
-    background-color: #e74c3c; /* Rouge pour le bouton de déconnexion */
+    background-color: #e74c3c; 
     color: white;
     padding: 5px 10px;
     border: none;

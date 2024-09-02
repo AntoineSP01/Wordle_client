@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./components/navBar"; // Importer le composant Navbar
+import Navbar from "./components/navBar"; 
 import { Outlet } from "react-router-dom"; 
 import "./App.css";
 

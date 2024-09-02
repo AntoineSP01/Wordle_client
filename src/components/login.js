@@ -29,11 +29,11 @@ function Login({ onLogin }) {
                 localStorage.setItem("token", response.data.token);
                 setMessage("Login successful!");
                 handleLogin();
-                navigate("/game"); // Redirection vers la page du jeu
+                navigate("/game"); 
                 window.location.reload();
             })
             .catch((error) => {
-                console.error("Login error:", error); // Loguer l'erreur pour déboguer
+                console.error("Login error:", error); 
                 setMessage("Error logging in.");
             });
 

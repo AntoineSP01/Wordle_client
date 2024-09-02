@@ -11,10 +11,10 @@ function Profile() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Charger le nom de l'utilisateur lorsque le composant est monté
+        
         const token = localStorage.getItem("token");
         if (!token) {
-            navigate("/login"); // Rediriger vers la page de connexion si non authentifié
+            navigate("/login"); 
         } else {
             axios
                 .get(`${apiUrl}/api/profile`, {
